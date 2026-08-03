@@ -1,6 +1,6 @@
 # 🛒 Fake Store App
 
-A responsive e-commerce web application built using **HTML5, CSS3, and JavaScript**. The application fetches real-time product data from the **Fake Store API** and displays products dynamically in a clean, modern, and responsive user interface.
+A responsive e-commerce web application built using **HTML5, CSS3, and JavaScript**. This project demonstrates API integration, asynchronous programming using **Fetch API** and **Async/Await**, dynamic DOM manipulation, and responsive user interface design.
 
 ---
 
@@ -14,7 +14,7 @@ A responsive e-commerce web application built using **HTML5, CSS3, and JavaScrip
 - ⚡ Uses Fetch API with Async/Await for asynchronous data fetching
 - 🎨 Dynamically generates product cards using DOM Manipulation
 - 🛡️ Handles API errors using Try/Catch
-- 🛒 Interactive and user-friendly interface
+- 🛒 Clean, modern, and user-friendly interface
 
 ---
 
@@ -82,7 +82,7 @@ Open `index.html` in your preferred web browser.
 - **Base URL:** https://fakestoreapi.com/
 - **Products Endpoint:** https://fakestoreapi.com/products
 
-The application fetches product information from the `/products` endpoint and dynamically displays the data using JavaScript.
+The application fetches product data from the `/products` endpoint and dynamically renders it using JavaScript.
 
 ---
 
@@ -96,13 +96,11 @@ The application fetches product information from the `/products` endpoint and dy
 
 **GitHub Repository**
 
-https://github.com/ravitejautti7/fake-store-app
+👉 [https://github.com/ravitejautti7/fake-store-app](https://github.com/ravitejautti7/fake-store-app)
 
 **Live Demo**
 
-Coming Soon (GitHub Pages)
-
-> After deploying with GitHub Pages, replace the above text with your live project URL.
+🚀 [https://ravitejautti7.github.io/fake-store-app/](https://ravitejautti7.github.io/fake-store-app/)
 
 ---
 
@@ -116,7 +114,7 @@ While developing this project, I gained practical experience with:
 - Dynamic rendering of API data
 - Error handling using Try/Catch
 - Building responsive layouts using CSS Grid
-- Creating reusable and clean JavaScript code
+- Writing clean and reusable JavaScript code
 
 ---
 
@@ -131,7 +129,7 @@ While developing this project, I gained practical experience with:
 
 ## 📄 License
 
-This project is created for learning and educational purposes.
+This project was created for learning and educational purposes.
 
 ---
 
