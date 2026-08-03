@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>fetch api</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="left">
-            <h2>🛒Fake Store</h2>
-        </div>
-        <div class="center">
-            <input type="text" placeholder="Search Products...🔍">
-        </div>
-        <div class="right">
-            <button>🛒 Cart</button>
-        </div>
-    </header>
 
-    <main>
-        <div id="products">
+<header>
 
-        </div>
+    <div class="left">
+        <h2>🛒 Fake Store</h2>
+    </div>
 
-    </main>
-    
-    <script src="script.js"></script>
+    <div class="center">
+        <input
+            type="text"
+            id="search"
+            placeholder="Search Products..."
+        >
+    </div>
+
+    <div class="right">
+        <button>🛒 Cart</button>
+    </div>
+
+</header>
+
+<main>
+
+    <div id="products">
+        <h2 class="loading">Loading Products...</h2>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>
