@@ -6,66 +6,68 @@ let allProducts = [];
 async function getProducts() {
 
     productsContainer.innerHTML =
-    "<h2 class='loading'>Loading Products...</h2>";
+        "<h2 class='loading'>Loading Products...</h2>";
 
-    try{
+    try {
 
         const response =
-        await fetch("https://fakestoreapi.com/products");
+            await fetch("https://fakestoreapi.com/products");
+
+        // Check if API response is successful
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
 
         const products =
-        await response.json();
+            await response.json();
 
         allProducts = products;
 
         displayProducts(products);
 
-    }
-
-    catch(error){
+    } catch (error) {
 
         productsContainer.innerHTML =
+            "<h2 class='error'>Unable to load products.</h2>";
 
-        "<h2 class='error'>Unable to load products.</h2>";
-
-        console.log(error);
+        console.error("API Error:", error);
 
     }
-
 }
 
-function displayProducts(products){
+
+function displayProducts(products) {
 
     productsContainer.innerHTML = "";
 
-    products.forEach(product=>{
+    products.forEach(product => {
 
-        const card=document.createElement("div");
+        const card = document.createElement("div");
 
-        card.className="card";
+        card.className = "card";
 
-        card.innerHTML=`
+        card.innerHTML = `
 
-        <img src="${product.image}" alt="${product.title}">
+            <img src="${product.image}" alt="${product.title}">
 
-        <h2>${product.title}</h2>
+            <h2>${product.title}</h2>
 
-        <p class="rating">
-        ⭐ ${product.rating.rate}
-        (${product.rating.count} Reviews)
-        </p>
+            <p class="rating">
+                ⭐ ${product.rating.rate}
+                (${product.rating.count} Reviews)
+            </p>
 
-        <p class="price">
-        $${product.price.toFixed(2)}
-        </p>
+            <p class="price">
+                $${product.price.toFixed(2)}
+            </p>
 
-        <p class="category">
-        ${product.category}
-        </p>
+            <p class="category">
+                ${product.category}
+            </p>
 
-        <button>
-        🛒 Add to Cart
-        </button>
+            <button>
+                🛒 Add to Cart
+            </button>
 
         `;
 
@@ -75,18 +77,20 @@ function displayProducts(products){
 
 }
 
-searchInput.addEventListener("input",()=>{
 
-    const value = searchInput.value.toLowerCase();
+searchInput.addEventListener("input", () => {
 
-    const filtered = allProducts.filter(product=>
+    const value =
+        searchInput.value.toLowerCase();
 
-        product.title.toLowerCase().includes(value)
-
-    );
+    const filtered =
+        allProducts.filter(product =>
+            product.title.toLowerCase().includes(value)
+        );
 
     displayProducts(filtered);
 
 });
+
 
 getProducts();
