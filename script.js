@@ -11,19 +11,19 @@ async function getProducts() {
     try {
 
         const response =
-            await fetch("https://fakestoreapi.com/products");
+            await fetch("https://dummyjson.com/products");
 
-        // Check if API response is successful
         if (!response.ok) {
             throw new Error(`HTTP Error: ${response.status}`);
         }
 
-        const products =
+        const data =
             await response.json();
 
-        allProducts = products;
+        // DummyJSON stores products inside "products"
+        allProducts = data.products;
 
-        displayProducts(products);
+        displayProducts(allProducts);
 
     } catch (error) {
 
@@ -48,13 +48,12 @@ function displayProducts(products) {
 
         card.innerHTML = `
 
-            <img src="${product.image}" alt="${product.title}">
+            <img src="${product.thumbnail}" alt="${product.title}">
 
             <h2>${product.title}</h2>
 
             <p class="rating">
-                ⭐ ${product.rating.rate}
-                (${product.rating.count} Reviews)
+                ⭐ ${product.rating}
             </p>
 
             <p class="price">
